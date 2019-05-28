@@ -1,22 +1,28 @@
 import { Injectable } from '@angular/core';
-import {AngularFireAuth } from "@angular/fire/auth";
-import { resolve } from 'url';
-import { reject } from 'q';
-
+import { AngularFireAuth } from '@angular/fire/auth';
+import { promise } from 'protractor';
+import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private AFauth : AngularFireAuth) { }
-  
-  //funcion para validar la respuesta del login
-  login(email:string, password:string){
-    return new Promise((resolve, rejected) =>{
-      this.AFauth.auth.signInWithEmailAndPassword(email,password).then(res=>{
-        resolve(email);
-     }).catch(err => rejected( err)) 
+  constructor(private AFauth: AngularFireAuth, private router: Router) { }
+
+  login(email: string, password: string) {
+
+    return new Promise((resolve, rejected) => {
+      this.AFauth.auth.signInWithEmailAndPassword(email, password).then(user => {
+        resolve(user);
+      }).catch(err => rejected(err));
     });
-    }
+  }
+
+  logout() {
+    this.AFauth.auth.signOut().then(() => {
+      this.router.navigate(['/login']);
+    });
+  }
 }
