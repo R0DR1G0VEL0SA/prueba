@@ -20,7 +20,10 @@ const routes: Routes = [
   },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'login', loadChildren: './componentes/login/login.module#LoginPageModule',
-    canActivate : [NoLoginGuard] }
+    canActivate : [NoLoginGuard] },  { path: 'rol', loadChildren: './componentes/rol/rol.module#RolPageModule' },
+  { path: 'registro-empresa', loadChildren: './componentes/registro-empresa/registro-empresa.module#RegistroEmpresaPageModule' },
+  { path: 'registro-conductor', loadChildren: './componentes/registro-conductor/registro-conductor.module#RegistroConductorPageModule' }
+
 ];
 
 @NgModule({
