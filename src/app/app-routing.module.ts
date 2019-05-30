@@ -4,26 +4,15 @@ import { AuthGuard } from './guards/auth.guard';
 import { NoLoginGuard } from './guards/nologin.guard';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    loadChildren: './home/home.module#HomePageModule',
-    canActivate : [AuthGuard]
-  },
-  {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
-  },
-  { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
-  { path: 'login', loadChildren: './componentes/login/login.module#LoginPageModule',
-    canActivate : [NoLoginGuard] },  { path: 'rol', loadChildren: './componentes/rol/rol.module#RolPageModule' },
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'home', loadChildren: './componentes/home/home.module#HomePageModule', canActivate : [AuthGuard]},
+  { path: 'login', loadChildren: './componentes/login/login.module#LoginPageModule', canActivate : [NoLoginGuard] },
+  { path: 'rol', loadChildren: './componentes/rol/rol.module#RolPageModule' },
   { path: 'registro-empresa', loadChildren: './componentes/registro-empresa/registro-empresa.module#RegistroEmpresaPageModule' },
-  { path: 'registro-conductor', loadChildren: './componentes/registro-conductor/registro-conductor.module#RegistroConductorPageModule' }
-
+  { path: 'registro-conductor', loadChildren: './componentes/registro-conductor/registro-conductor.module#RegistroConductorPageModule' },
+  { path: 'intro', loadChildren: './componentes/intro/intro.module#IntroPageModule' },
+  { path: 'contrasena', loadChildren: './componentes/contrasena/contrasena.module#ContrasenaPageModule' },
+  { path: 'home-empresa', loadChildren: './componentes/home-empresa/home-empresa.module#HomeEmpresaPageModule' }
 ];
 
 @NgModule({
