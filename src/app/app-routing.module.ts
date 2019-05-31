@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'login', loadChildren: './componentes/login/login.module#LoginPageModule', canActivate : [NoLoginGuard] },
   { path: 'rol', loadChildren: './componentes/rol/rol.module#RolPageModule' },
   { path: 'registro-empresa', loadChildren: './componentes/registro-empresa/registro-empresa.module#RegistroEmpresaPageModule' },
-  { path: 'registro-conductor', loadChildren: './componentes/registro-conductor/registro-conductor.module#RegistroConductorPageModule' },
+// tslint:disable-next-line: max-line-length
+  { path: 'registro-conductor', loadChildren: './componentes/registro-conductor/registro-conductor.module#RegistroConductorPageModule', canActivate : [NoLoginGuard]},
   { path: 'intro', loadChildren: './componentes/intro/intro.module#IntroPageModule' },
   { path: 'contrasena', loadChildren: './componentes/contrasena/contrasena.module#ContrasenaPageModule' },
   { path: 'home-empresa', loadChildren: './componentes/home-empresa/home-empresa.module#HomeEmpresaPageModule' }
