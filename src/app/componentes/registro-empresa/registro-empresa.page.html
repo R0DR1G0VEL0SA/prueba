@@ -7,6 +7,39 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+     <h3 text-center>Comencemos creando una cuenta</h3>
+     <ion-item>
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type = "text"  [(ngModel)]="name"  name ="name"></ion-input>
+      </ion-item>
+     <ion-item>
+        <ion-label position="floating">Nit</ion-label>
+        <ion-input type = "text" [(ngModel)]="nit"  name ="nit"></ion-input>
+     </ion-item>
+     <ion-item>
+        <ion-label position="floating">Actividad económica</ion-label>
+        <ion-input type = "text" [(ngModel)]="ActividadE"  name ="ActividadE"></ion-input>
+     </ion-item>
+     <ion-item>
+        <ion-label position="floating">Representante Legal</ion-label>
+        <ion-input type = "text" [(ngModel)]="rep"  name ="rep"></ion-input>
+    </ion-item>
+     <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input type = "text" [(ngModel)]="email"   name ="email"></ion-input>
+     </ion-item>
+     <ion-item>
+        <ion-label position="floating">WhatsApp</ion-label>
+        <ion-input type = "text" [(ngModel)]="cel"  name ="cel"></ion-input>
+    </ion-item>
+     <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type = "password" [(ngModel)]="password"   name ="password"></ion-input>
+     </ion-item>
+        <br/>
+        <ion-button  (click)="OnSubmitRegisterEmpresa()" expand="block">Ingresar</ion-button>
+     <br/>
+     <p text-center>Ya tengo cuenta</p> 
+        
 </ion-content>
