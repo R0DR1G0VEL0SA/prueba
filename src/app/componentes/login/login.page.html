@@ -1,26 +1,39 @@
-<ion-header>
-  <ion-toolbar color="dark">
-    <ion-title text-center >login</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content padding>
-  <img class="icon" src="assets/icon/icono1.png">
-  <ion-item>
-    <ion-label position="floating">Usuario</ion-label>
+
+
+<ion-content padding class ="background" >
+    <!---<img class="icon" src="assets/icon/icono1.png">-->
+
+
+    <div class ="center">
+
+      <ion-item color="white">
+        <ion-label position="floating" text color ="medium" > <ion-icon name="person" item-left></ion-icon>&nbsp;&nbsp;Usuario</ion-label>
     <ion-input type = "text"  [(ngModel)] = "user" name ="user"></ion-input>
   </ion-item>
 
-  <ion-item>
-      <ion-label position="floating">Contraseña</ion-label>
+  <ion-item color="white ">
+    <ion-label position="floating"text color ="medium"><ion-icon name="lock" item-left></ion-icon>&nbsp;&nbsp;Contraseña</ion-label>
       <ion-input type = "password" [(ngModel)] = "password" name ="password"></ion-input>
   </ion-item>
+  
+
+ 
+  <ion-button color="white " href="/contrasena"  >¿no recuerdas la clave?</ion-button>
+
+
+
   <br>
-  <ion-button  (click)="OnSubmitLogin()" expand="block">Ingresar</ion-button>
+  <hr>
+  <ion-button  (click)="OnSubmitLogin()" expand="block" fill="outline" shape="round" background="red">Iniciar sesión</ion-button>
   <hr>
 
     <ion-button  href="/rol" color="secondary">Crear cuenta!</ion-button>
     <ion-button  href="/contrasena" color="danger">Recuperar contraseña</ion-button>
+    
+    
+    
 
 
+  </div>
 </ion-content>
