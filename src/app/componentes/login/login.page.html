@@ -2,38 +2,40 @@
 
 
 <ion-content padding class ="background" >
-    <!---<img class="icon" src="assets/icon/icono1.png">-->
+    <img class="icon" src="assets/icon/LOGO1.png" >
 
 
-    <div class ="center">
+    <div class ="center centro">
 
-      <ion-item color="white">
+      <ion-item color="white"class="inferior">
         <ion-label position="floating" text color ="medium" > <ion-icon name="person" item-left></ion-icon>&nbsp;&nbsp;Usuario</ion-label>
     <ion-input type = "text"  [(ngModel)] = "user" name ="user"></ion-input>
   </ion-item>
 
-  <ion-item color="white ">
+  <ion-item color="white " class="inferior">
     <ion-label position="floating"text color ="medium"><ion-icon name="lock" item-left></ion-icon>&nbsp;&nbsp;Contraseña</ion-label>
       <ion-input type = "password" [(ngModel)] = "password" name ="password"></ion-input>
   </ion-item>
   
-
+  <ion-item lines="none" color="white " href="/contrasena" size="10px">
  
-  <ion-button color="white " href="/contrasena"  >¿no recuerdas la clave?</ion-button>
+  <ion-label color="medium "    class="letra1">¿no recuerdas la clave?</ion-label>
+  
+</ion-item >
 
 
-
-  <br>
+  
+  <ion-button  (click)="OnSubmitLogin()" expand="block" fill="outline" shape="round" class="botonfondo" size="200px">Iniciar sesión</ion-button>
   <hr>
-  <ion-button  (click)="OnSubmitLogin()" expand="block" fill="outline" shape="round" background="red">Iniciar sesión</ion-button>
-  <hr>
 
-    <ion-button  href="/rol" color="secondary">Crear cuenta!</ion-button>
-    <ion-button  href="/contrasena" color="danger">Recuperar contraseña</ion-button>
+   <!-- <ion-button  href="/rol" color="secondary">Crear cuenta!</ion-button>-->
+   <!-- <ion-button  href="/contrasena" color="danger">Recuperar contraseña</ion-button>-->
     
-    
-    
+    <ion-item   lines="none" color="white " href="/rol" >
+    <ion-label   color ="medium" class="letra" >¿Aun no tienes cuenta?</ion-label><ion-label href="/rol"  color ="warning " class="letra">Regìstrate</ion-label>
+  </ion-item>
 
+  
 
   </div>
 </ion-content>
