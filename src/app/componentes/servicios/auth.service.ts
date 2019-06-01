@@ -28,8 +28,7 @@ export class AuthService {
     });
   }
 
-  register(email: string, password: string, firstName: string){
-
+  register(email: string, password: string, firstName: string, lastName: string, whatsapp: string, city: string) {
     return new Promise ((resolve, reject) => {
       this.AFauth.auth.createUserWithEmailAndPassword(email, password).then( res =>{
           // console.log(res.user.uid);
@@ -37,13 +36,15 @@ export class AuthService {
 // tslint:disable-next-line: align
           this.db.collection('conductores').doc(uid).set({
             nombre : firstName,
+            apellidos : lastName,
             correo : email,
             contrasena: password,
+            celular: whatsapp,
+            ciudad: city,
             uiid: uid
           });
-
-        resolve(res)
-      }).catch( err => reject(err))
-    })
+        resolve(res);
+      }).catch( err => reject(err));
+    });
   }
 }

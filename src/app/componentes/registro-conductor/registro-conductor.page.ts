@@ -25,7 +25,7 @@ export class RegistroConductorPage implements OnInit {
 
   OnSubmitRegister() {
 // tslint:disable-next-line: no-shadowed-variable
-    this.auth.register(this.email, this.password, this.firstName ).then( auth => {
+    this.auth.register(this.email, this.password, this.firstName, this.lastName, this.cel, this.city ).then( auth => {
         this.router.navigate(['home']);
         console.log(auth);
     }).catch(err => console.log(err));
