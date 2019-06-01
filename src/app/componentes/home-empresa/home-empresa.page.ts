@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../servicios/auth.service';
+import { ModalController } from '@ionic/angular';
+import { ActionSheetController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home-empresa',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeEmpresaPage implements OnInit {
 
-  constructor() { }
-
   ngOnInit() {
+  }
+  constructor(
+    // tslint:disable-next-line: no-trailing-whitespace
+        public authservice: AuthService, 
+        public actionSheetController: ActionSheetController,
+        private modal: ModalController) { }
+
+  Onlogout() {
+    this.authservice.logout();
   }
 
 }

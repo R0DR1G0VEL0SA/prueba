@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'registro-conductor', loadChildren: './componentes/registro-conductor/registro-conductor.module#RegistroConductorPageModule', canActivate : [NoLoginGuard]},
   { path: 'intro', loadChildren: './componentes/intro/intro.module#IntroPageModule' },
   { path: 'contrasena', loadChildren: './componentes/contrasena/contrasena.module#ContrasenaPageModule' },
-  { path: 'home-empresa', loadChildren: './componentes/home-empresa/home-empresa.module#HomeEmpresaPageModule' }
+  { path: 'home-empresa', loadChildren: './componentes/home-empresa/home-empresa.module#HomeEmpresaPageModule' },  { path: 'servicio', loadChildren: './componentes/servicio/servicio.module#ServicioPageModule' }
+
 ];
 
 @NgModule({

@@ -13,6 +13,9 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule } from '@angular/fire/auth';
 import {AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -27,6 +30,7 @@ import {AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/fir
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     {provide: FirestoreSettingsToken, useValue: {}}
   ],
