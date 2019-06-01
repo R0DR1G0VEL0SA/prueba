@@ -41,7 +41,8 @@ export class AuthService {
             contrasena: password,
             celular: whatsapp,
             ciudad: city,
-            uiid: uid
+            uiid: uid,
+            rol: '1'
           });
         resolve(res);
       }).catch( err => reject(err));
@@ -63,7 +64,8 @@ export class AuthService {
             whatsapp: cel,
             email: email,
             contrasena: password,
-            uiid: uid
+            uiid: uid,
+            rol: '2'
           });
         resolve(res);
       }).catch( err => reject(err));
