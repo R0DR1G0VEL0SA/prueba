@@ -47,4 +47,26 @@ export class AuthService {
       }).catch( err => reject(err));
     });
   }
+
+  registerEmpresa(name: string, nit: string, ActividadE: string, rep: string, email: string, cel: string,
+    password: string) {
+    return new Promise ((resolve, reject) => {
+      this.AFauth.auth.createUserWithEmailAndPassword(email, password).then( res =>{
+          // console.log(res.user.uid);
+        const uid = res.user.uid;
+// tslint:disable-next-line: align
+          this.db.collection('empresas').doc(uid).set({
+            nombre : name,
+            nit : nit,
+            representante : rep,
+            actividad: ActividadE,
+            whatsapp: cel,
+            email: email,
+            contrasena: password,
+            uiid: uid
+          });
+        resolve(res);
+      }).catch( err => reject(err));
+    });
+  }
 }
