@@ -5,9 +5,19 @@
           </ion-buttons>
     <ion-title>Recuperar Contraseña</ion-title>
   </ion-toolbar>
-
 </ion-header>
 
-<ion-content>
+<ion-content padding>
 
-</ion-content>
+  <h3>Olvidé mi contraseña </h3>   
+  <br>
+  <ion-item >
+      <ion-label position="floating" >Ingresa tu correo electrónico</ion-label>
+      <ion-input type = "text"  [(ngModel)] = "email" name ="email"></ion-input>
+  </ion-item>
+  <br>
+  <ion-button  (click)="resetPassword()" expand="block" >Recuperar Contraseña</ion-button>
+
+       <h5 tect-center>¿Aún no  tienes cuenta?  Registrate </h5> 
+
+</ion-content>s

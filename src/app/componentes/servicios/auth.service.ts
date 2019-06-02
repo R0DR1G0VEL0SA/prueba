@@ -22,6 +22,15 @@ export class AuthService {
     });
   }
 
+  getPassword(email: string) {
+    return new Promise((resolve, rejected) => {
+      this.AFauth.auth.sendPasswordResetEmail(email).then(() => {
+        resolve(true);
+      })
+      .catch(err => rejected(err));
+    });
+  }
+
   logout() {
     this.AFauth.auth.signOut().then(() => {
       this.router.navigate(['/login']);
@@ -30,7 +39,7 @@ export class AuthService {
 
   register(email: string, password: string, firstName: string, lastName: string, whatsapp: string, city: string) {
     return new Promise ((resolve, reject) => {
-      this.AFauth.auth.createUserWithEmailAndPassword(email, password).then( res =>{
+      this.AFauth.auth.createUserWithEmailAndPassword(email, password).then( res => {
           // console.log(res.user.uid);
         const uid = res.user.uid;
 // tslint:disable-next-line: align
@@ -50,7 +59,7 @@ export class AuthService {
   }
 
   registerEmpresa(name: string, nit: string, ActividadE: string, rep: string, email: string, cel: string,
-    password: string) {
+                  password: string ) {
     return new Promise ((resolve, reject) => {
       this.AFauth.auth.createUserWithEmailAndPassword(email, password).then( res =>{
           // console.log(res.user.uid);
@@ -62,6 +71,7 @@ export class AuthService {
             representante : rep,
             actividad: ActividadE,
             whatsapp: cel,
+// tslint:disable-next-line: object-literal-shorthand
             email: email,
             contrasena: password,
             uiid: uid,
